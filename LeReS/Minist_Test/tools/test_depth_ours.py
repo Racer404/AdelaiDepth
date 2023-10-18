@@ -71,8 +71,10 @@ if __name__ == '__main__':
         # if GT depth is available, uncomment the following part to recover the metric depth
         #pred_depth_metric = recover_metric_depth(pred_depth_ori, gt_depth)
 
-        img_name = v.split('/')[-1]
+        img_name = v.split('/')[0]
         #cv2.imwrite(os.path.join(image_dir_out, img_name), rgb)
         # save depth
         #plt.imsave(os.path.join(image_dir_out, img_name[:-4]+'-depth.png'), pred_depth_ori, cmap='rainbow')
-        cv2.imwrite(os.path.join(image_dir, img_name + '/disp0LeReS.png'), (pred_depth_ori/pred_depth_ori.max() * 60000).astype(np.uint16))
+        outputDir = v.split('im0.png')[0]+'disp0LeReS.png'
+        print(outputDir)
+        cv2.imwrite(outputDir, (pred_depth_ori/pred_depth_ori.max() * 60000).astype(np.uint16))
