@@ -75,4 +75,4 @@ if __name__ == '__main__':
         #cv2.imwrite(os.path.join(image_dir_out, img_name), rgb)
         # save depth
         #plt.imsave(os.path.join(image_dir_out, img_name[:-4]+'-depth.png'), pred_depth_ori, cmap='rainbow')
-        cv2.imwrite(os.path.join(image_dir_out, img_name + '/disp0LeReS.png'), (pred_depth_ori/pred_depth_ori.max() * 60000).astype(np.uint16))
+        cv2.imwrite(os.path.join(image_dir, img_name + '/disp0LeReS.png'), (pred_depth_ori/pred_depth_ori.max() * 60000).astype(np.uint16))
